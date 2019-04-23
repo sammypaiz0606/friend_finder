@@ -1,103 +1,46 @@
-// ***** DEPENDENCIES *****
-var friends = require("../data/friends.js");
-var path = require("path");
-var fs = require("fs");
+var friends = require("../data/friends");
 
-// ***** API ROUTES *****
-module.exports = function(app){
+module.exports = function(app) {
+  // Return all friends found in friends.js as JSON
+  app.get("/api/friends", function(req, res) {
+    res.json(friends);
+  });
 
-	// ---- Get a json list of all available friends ----
-	app.get("/api/friends", function(req, res) {
-	  res.json(friends);
-	});
+  app.post("/api/friends", function(req, res) {
+    console.log(req.body.scores);
 
-	// ---- POST request used for survey ----
-	app.post("/api/friends", function(req, res){
-		console.log("this will do stuff");
-		var friendInput = req.body; // stores input from user survey
-		res.json(true);
-		console.log("\nName: " + friendInput.name + "\nPhoto: " +
-			friendInput.photo + "\nScores: " + friendInput.answers);
+    // Receive user details (name, photo, scores)
+    var user = req.body;
 
-		friendInput.answers = friendInput.answers.split(",");
+    // parseInt for scores
+    for(var i = 0; i < user.scores.length; i++) {
+      user.scores[i] = parseInt(user.scores[i]);
+    }
 
-		friends.push(friendInput);
-		convertAnswers(friendInput);
-		// console.log(friendInput.answers);
+    // default friend match is the first friend but result will be whoever has the minimum difference in scores
+    var bestFriendIndex = 0;
+    var minimumDifference = 40;
 
-		compareFriends(friends, friendInput);
+    // in this for-loop, start off with a zero difference and compare the user and the ith friend scores, one set at a time
+    //  whatever the difference is, add to the total difference
+    for(var i = 0; i < friends.length; i++) {
+      var totalDifference = 0;
+      for(var j = 0; j < friends[i].scores.length; j++) {
+        var difference = Math.abs(user.scores[j] - friends[i].scores[j]);
+        totalDifference += difference;
+      }
 
-		// console.log(friendInput);
-	});
+      // if there is a new minimum, change the best friend index and set the new minimum for next iteration comparisons
+      if(totalDifference < minimumDifference) {
+        bestFriendIndex = i;
+        minimumDifference = totalDifference;
+      }
+    }
 
-}
+    // after finding match, add user to friend array
+    friends.push(user);
 
-// Constructor function for builiding friend objects using the
-// name, photo link, and an array of the answers
-function NewFriend(name, photo, answers) {
-	this.name = name;
-	this.photo = photo;
-	this.answers = answers;
-}
-
-// Function to change formate of survey answers because the come in as strings
-function convertAnswers(currentFriend) {
-	// variable to hold the current friend
-	var current = currentFriend;
-	// console.log(current);
-
-	var curAnswers = current.answers; // holds answers
-
-	// converts answers from strings to numbers
-	for (i=0; i<curAnswers.length; i++) {
-		curAnswers[i] = parseInt(curAnswers[i]);
-	}
-
-} // END convertAnswers()
-
-// Comparison function to compare the current friend's answers to those
-// of other friends in the list
-function compareFriends(allFriends, currentFriend) {
-	var curFriend = currentFriend.answers;
-	var matchFriend;
-	var matchScores = [];
-	var matchScore = 0;
-	var closestMatch;
-
-	// for each friend (excluding last added)...
-	for (i=0; i<allFriends.length-1; i++) {
-		// store all the scores in an array...
-		matchFriend = allFriends[i].answers;
-		// console.log(matchFriend);
-
-		// for each answer in an array...
-		for (j=0; j<matchFriend.length; j++) {
-			// store the abs value of the difference between the answers of
-			// the new friend and this friend in the array
-			var qScore = Math.abs(curFriend[j] - matchFriend[j]);
-			// the total match score is equal to the sum of all qScores
-			matchScore += qScore;
-		} // End of scoring for loop
-		// console.log(matchScore)
-
-		// push this friends matchScore into an array
-		matchScores.push(matchScore);
-		// reset the matchScore to zero before moving to the next friend
-		matchScore = 0;
-	} // END of main for loop
-	// console.log(matchScores)
-
-	// Find lowest score in matchScores array
-	var lowestScore = Math.min(...matchScores);
-	// console.log(lowestScore);
-
-	// find the index of the lowest score
-	var matchIndex = matchScores.indexOf(lowestScore);
-	// console.log(matchIndex);
-	// find the friend at this index in the allFriends array
-	var bestFriend = allFriends[matchIndex];
-
-	// add a new property to the current friend's object that holds the best match
-	currentFriend.bestie = bestFriend;
-	// console.log(currentFriend);
-}
+    // send back to browser the best friend match
+    res.json(friends[bestFriendIndex]);
+  });
+};
