@@ -1,6 +1,7 @@
 body {
 	font-family: 'Roboto', sans-serif;
-	background: #000;
+	background-image:url('http://www.executivestyle.com.au/content/dam/images/g/n/4/w/6/n/image.related.articleLeadwide.520x294.gp1ee1.png/1463970384782.jpg');
+	background-size:cover;
 }
 
 .site {
@@ -28,6 +29,7 @@ p {
 	line-height: 1.75;
 	margin: auto;
 	font-size: 1.2em;
+	color:#fff;
 }
 
 footer {
