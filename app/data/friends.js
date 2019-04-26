@@ -114,7 +114,17 @@ var friends = [
 	{
 		name: "David Puddy",
 		photo: "https://i.pinimg.com/originals/c4/ff/25/c4ff259f810d8d8e9db1baab3db997a5.jpg",
-		scores: [3, 1, 5, 4, 2, 1, 3, 2, 5, 4]
+		scores: [4, 1, 5, 3, 2, 4, 3, 2, 5, 1]
+	},
+	{
+		name: "Elaine's Boss",
+		photo: "https://i.pinimg.com/236x/1e/23/54/1e2354559448256135356594f67934ac--seinfeld-characters-movie-list.jpg",
+		scores: [1, 3, 5, 4, 1, 2, 3, 2, 4, 5]
+	},
+	{
+		name: "Seinfield's Uncle",
+		photo: "https://i.pinimg.com/564x/15/1c/65/151c657e9aface09e25cdcf0322dedac--seinfeld-characters-eyebrows.jpg",
+		scores: [3, 1, 5, 2, 4, 1, 3, 5, 2, 4]
 	}
 ];
 
