@@ -69,27 +69,37 @@ var friends = [
 	{
 		name: "Kramer",
 		photo: "https://www.whitepages.com/wp-content/uploads/2014/05/Kramer.jpg",
-		scores: [5, 1, 2, 3, 1, 2, 5, 1, 1, 1]
+		scores: [1, 5, 4, 5, 3, 3, 4, 3, 2, 1]
 	},
 	{
 		name: "George Costanza",
 		photo: "https://www.maxim.com/.image/t_share/MTM1NjI0NzQ0MjUzODM1Mjc0/np010415_georgecostanza_articlejpg.jpg",
-		scores: [2, 5, 4, 1, 2, 3, 3, 2, 3, 3]
+		scores: [2, 4, 3, 1, 2, 3, 4, 5, 1, 3]
 	},
 	{
 		name: "Elaine",
 		photo: "https://nzfilmfreak.files.wordpress.com/2014/11/seinfeld_elaine_310x450.jpg",
-		scores: [1, 1, 5, 3, 3, 5, 1, 2, 3, 4]
+		scores: [3, 3, 2, 2, 1, 5, 1, 2, 3, 4]
 	},
 	{
 		name: "Newman",
 		photo: "https://66.media.tumblr.com/51cc2de2ada55588a2a040246951b930/tumblr_ow27u9dYnD1v5hkj7o1_500.jpg",
-		scores: [3, 1, 3, 5, 2, 3, 2, 2, 5, 5]
+		scores: [4, 4, 1, 3, 4, 1, 2, 3, 4, 5]
 	},
 	{
 		name: "Seinfield",
 		photo: "https://images-na.ssl-images-amazon.com/images/I/41qlB5ceoYL._SX466_.jpg",
-		scores: [3, 1, 4, 4, 2, 4, 2, 5, 1, 3]
+		scores: [5, 5, 6, 4, 5, 2, 4, 1, 5, 3]
+	},
+	{
+		name: "Notzie Guy",
+		photo: "https://i.kym-cdn.com/photos/images/original/000/538/460/90d.jpg",
+		scores: [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+	},
+	{
+		name: "George Girl",
+		photo: "https://vignette.wikia.nocookie.net/seinfeld/images/9/9d/Susanross.jpg/revision/latest?cb=20120114162508.jpg",
+		scores: [2, 4, 3, 1, 5, 1, 2, 3, 5, 4]
 	}
 ];
 
