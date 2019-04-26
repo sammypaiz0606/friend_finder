@@ -100,6 +100,21 @@ var friends = [
 		name: "George Girl",
 		photo: "https://vignette.wikia.nocookie.net/seinfeld/images/9/9d/Susanross.jpg/revision/latest?cb=20120114162508.jpg",
 		scores: [2, 4, 3, 1, 5, 1, 2, 3, 5, 4]
+	},
+	{
+		name: "Man Hands",
+		photo: "https://www.trueblood-online.com/wp-content/uploads/2014/07/seinf8-kbvs01.jpg",
+		scores: [2, 4, 3, 1, 5, 1, 2, 3, 5, 4]
+	},
+	{
+		name: "George's Mom",
+		photo: "https://www.tribute.ca/news/wp-content/uploads/2012/07/Estelle-Costanza.jpg",
+		scores: [3, 1, 5, 4, 2, 1, 3, 2, 5, 4]
+	},
+	{
+		name: "David Puddy",
+		photo: "https://i.pinimg.com/originals/c4/ff/25/c4ff259f810d8d8e9db1baab3db997a5.jpg",
+		scores: [3, 1, 5, 4, 2, 1, 3, 2, 5, 4]
 	}
 ];
 
