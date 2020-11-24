@@ -68,7 +68,7 @@
 var friends = [
 	{
 		name: "Kramer",
-		photo: "https://www.whitepages.com/wp-content/uploads/2014/05/Kramer.jpg",
+		photo: "https://i.pinimg.com/originals/25/74/e1/2574e1c51e6a36069dcb73b7cf6cd182.jpg",
 		scores: [1, 5, 4, 5, 3, 3, 4, 3, 2, 1]
 	},
 	{
@@ -108,12 +108,12 @@ var friends = [
 	},
 	{
 		name: "George's Mom",
-		photo: "https://www.tribute.ca/news/wp-content/uploads/2012/07/Estelle-Costanza.jpg",
+		photo: "https://static.wikia.nocookie.net/seinfeld/images/1/13/Estelle7.png/revision/latest/top-crop/width/360/height/360?cb=20120202152909https://www.tribute.ca/news/wp-content/uploads/2012/07/Estelle-Costanza.jpg",
 		scores: [3, 1, 5, 4, 2, 1, 3, 2, 5, 4]
 	},
 	{
 		name: "David Puddy",
-		photo: "https://i.pinimg.com/originals/c4/ff/25/c4ff259f810d8d8e9db1baab3db997a5.jpg",
+		photo: "https://1.bp.blogspot.com/-eIwaDUtmlNk/WYfmat3KcYI/AAAAAAAAYyQ/9PsDQh2k_mMaTRgP5g5pEv8Fs5ej0_ZtgCLcBGAs/s1600/puddy.jpghttps://i.pinimg.com/originals/c4/ff/25/c4ff259f810d8d8e9db1baab3db997a5.jpg",
 		scores: [4, 1, 5, 3, 2, 4, 3, 2, 5, 1]
 	},
 	{
