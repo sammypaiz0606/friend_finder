@@ -17,9 +17,9 @@ To install the application follow the instructions below:
 
 ## Example
 
-<img src='app/img/seinfield_1.jpg' width='1000' height='1000'>
-<img src='app/img/seinfield_2.jpg' width='1000' height='1000'>
-<img src='app/img/seinfield_3.jpg' width='1000' height='1000'>
+<img src='app/img/seinfield_1.jpg' width='900' height='800'>
+<img src='app/img/seinfield_2.jpg' width='900' height='800'>
+<img src='app/img/seinfield_3.jpg' width='900' height='800'>
 ## Running Locally
 
 To run the application locally and access it in your browser, first set the `PORT` environment variable to the value of your choice. An example is shown below.
